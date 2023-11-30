@@ -5,8 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
 
-
+<title>Insert title here</title>
+<!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script> -->
 <style>
 
 #container{
@@ -107,7 +109,7 @@
 		<div id="loginArea">
 		 	<div id="login-logo">
 				<img alt="invegan-logo" src="<c:url value='/resources/main/invegan_logo_master.png'/>">
-<!-- 				<span class="login-close" id="closeModalBtn">&times;</span> -->
+			<span class="login-close" id="closeModalBtn">&times;</span>
 			</div>
 			<span class="login-close" id="closeModalBtn">&times;</span>
 			<form action="member/login" method="post">
@@ -122,7 +124,7 @@
 					</tr>
 				</table>
 				<div id="login-btn-box">
-					<button id="loginBtn" type="submit">Login</button>
+					<button id="loginBtn">Login</button>
 					<button id="signupBtn" type="button" onclick="goSignUp()">SignUp</button>
 				</div>
 				<div id="bottom-box">
