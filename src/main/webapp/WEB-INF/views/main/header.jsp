@@ -4,13 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<!--  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
- 		<!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
-<!-- 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
-       <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
-<!-- 	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <style>
 
@@ -203,25 +197,27 @@ body::-webkit-scrollbar {
 </div>
 		<hr style="border:1px solid darkgrey; color:darkgrey; margin:8px;"/>
 </header>
-<%-- 	<%@ include file="library.jsp" %> --%>
+
 </body>
 
 <script>
 
 	/* 로그인 모달 */	
-	$("#header-loginBtn").click(function openModal() {
+	$("#header-loginBtn").click(function () {
        $("#login-modal").css("display", "block");
        $("body").css("overflow", "hidden");
        $('#login-id').focus();
-   });
+	});
 
    // 로그인 모달 닫기 버튼 및 모달 바깥 부분 클릭 시 이벤트
-   $("#closeModalBtn, .modal").click(function closeModal() {
+   $("#closeModalBtn").click(closeModal);
+   //$("#login-modal").click(closeModal);
+   
+   function closeModal(){
        $("#login-modal").css("display", "none");
        $("body").css("overflow", "auto");
-   });
+   }
    
-   	
 
 	// logo 클릭시 메인페이지
 	$('#Logo').on('click',function(){
