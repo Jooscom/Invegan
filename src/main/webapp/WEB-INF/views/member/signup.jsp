@@ -325,6 +325,7 @@ option{
 		  option.text = i + '년';
 		  $('#birthYear').append(option);
 	}
+	
 	// 생일 월 옵션 생성
 	for (var i = 1; i <= 12; i++) {
 	  var option = document.createElement("option");

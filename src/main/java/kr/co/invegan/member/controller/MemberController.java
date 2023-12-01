@@ -59,54 +59,6 @@ public class MemberController {
 		session.removeAttribute("loginInfo");
 		return "redirect:/";
 	}
-
-	//아이디 비밀번호 찾기
-		@RequestMapping(value = { "/member/find" }, method = RequestMethod.GET)
-		public String find() {
-
-			return "member/find";
-		}
-	
-	//아이디 찾기
-	@RequestMapping(value = { "/member/findId" }, method = RequestMethod.GET)
-	public String findId() {
-
-		return "member/findId";
-	}
-
-	@RequestMapping(value = {"/member/findId2"}, method = RequestMethod.POST)
-	public String findId(HttpServletResponse response, 
-			@RequestParam String email, 
-			Model model) throws Exception {
-		logger.info("email : "+email);
-		model.addAttribute("id", service.findId(response, email));
-		
-		return "member/findId";
-	}
-	
-
-	//비밀번호 찾기
-	@RequestMapping(value = { "/member/findPw" }, method = RequestMethod.GET)
-	public String findPw() {
-
-		return "member/findPw";
-	}
-	
-	@RequestMapping(value = {"/member/findPw2"}, method = RequestMethod.POST)
-	public String findPw(HttpServletResponse response, 
-	        @RequestParam String id, @RequestParam String email, 
-	        Model model) throws Exception {
-	    logger.info("id : " + id);
-	    logger.info("email : " + email);
-	    
-	    String pw = service.findPw(response, id, email);
-	    logger.info("service.findPw(id, email)을 실행해서 pw변수에 담음");
-	    if (pw != null) {
-	        model.addAttribute("pw", pw);
-	    }
-	    
-	    return "member/findPw"; 
-	}
 	
 	//회원가입 go
 	@RequestMapping(value = { "/member/signup.go" }, method = RequestMethod.GET)
@@ -168,6 +120,61 @@ public class MemberController {
 		}
 		return result;
 	}
+
+	
+	
+	
+	
+	//아이디 비밀번호 찾기
+	@RequestMapping(value = { "/member/find" }, method = RequestMethod.GET)
+	public String find() {
+
+		return "member/find";
+	}
+
+	//아이디 찾기
+	@RequestMapping(value = { "/member/findId" }, method = RequestMethod.GET)
+	public String findId() {
+	
+		return "member/findId";
+	}
+
+	@RequestMapping(value = {"/member/findId2"}, method = RequestMethod.POST)
+	public String findId(HttpServletResponse response, 
+			@RequestParam String email, 
+			Model model) throws Exception {
+		logger.info("email : "+email);
+		model.addAttribute("id", service.findId(response, email));
 		
+		return "member/findId";
+	}
+
+
+	//비밀번호 찾기
+	@RequestMapping(value = { "/member/findPw" }, method = RequestMethod.GET)
+	public String findPw() {
+	
+		return "member/findPw";
+	}
+
+	@RequestMapping(value = {"/member/findPw2"}, method = RequestMethod.POST)
+	public String findPw(HttpServletResponse response, 
+	        @RequestParam String id, @RequestParam String email, 
+	        Model model) throws Exception {
+	    logger.info("id : " + id);
+	    logger.info("email : " + email);
+	    
+	    String pw = service.findPw(response, id, email);
+	    logger.info("service.findPw(id, email)을 실행해서 pw변수에 담음");
+	    if (pw != null) {
+	        model.addAttribute("pw", pw);
+	    }
+	    
+	    return "member/findPw"; 
+	}
+	
+	
+	
+	
 	
 }

@@ -123,7 +123,7 @@
 					</tr>
 				</table>
 				<div id="login-btn-box">
-					<button id="loginBtn">Login</button>
+					<button id="loginBtn" type="submit">Login</button>
 					<button id="signupBtn" type="button" onclick="goSignUp()">SignUp</button>
 				</div>
 				<div id="bottom-box">
