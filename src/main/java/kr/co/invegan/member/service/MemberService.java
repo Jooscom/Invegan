@@ -33,6 +33,45 @@ public class MemberService {
         return dto;
     }
 
+    //아이디 찾기
+    public String findId(HttpServletResponse response, String email) throws Exception {
+        response.setContentType("text/html;charset=utf-8");
+        PrintWriter out = response.getWriter();
+        String id = dao.findId(email);
+        logger.info("id : "+id);
+        if (id == null) {
+            out.println("<script>");
+            out.println("alert('가입된 아이디가 없습니다.');");
+            out.println("history.go(-1);");
+            out.println("</script>");
+            out.close();
+        } else {
+        	logger.info("id : "+id);
+            
+        }
+        return id;
+    }
+
+    //비밀번호 찾기
+    public String findPw(HttpServletResponse response, String id, String email) throws Exception {
+    	response.setContentType("text/html;charset=utf-8");
+    	PrintWriter out = response.getWriter();
+    	logger.info("service 접근");
+    	String pw = dao.findPw(id, email);
+    	logger.info("pw : "+pw);
+    	 if (pw == null) {
+             out.println("<script>");
+             out.println("alert('아이디 또는 이메일을 수정해주세요.');");
+             out.println("history.go(-1);");
+             out.println("</script>");
+             out.close();
+         } else {
+         	logger.info("pw : "+pw);
+             
+         }
+         return pw;
+    }
+    
     public int signup(HashMap<String, Object> params) {
         logger.info("회원가입 요청");
         int row = dao.signup(params);
@@ -87,48 +126,5 @@ public class MemberService {
 		return "complete";
 	}
 	
-	
-	
-	
-	
-    //아이디 찾기
-    public String findId(HttpServletResponse response, String email) throws Exception {
-        response.setContentType("text/html;charset=utf-8");
-        PrintWriter out = response.getWriter();
-        String id = dao.findId(email);
-        logger.info("id : "+id);
-        if (id == null) {
-            out.println("<script>");
-            out.println("alert('가입된 아이디가 없습니다.');");
-            out.println("history.go(-1);");
-            out.println("</script>");
-            out.close();
-        } else {
-        	logger.info("id : "+id);
-            
-        }
-        return id;
-    }
 
-    //비밀번호 찾기
-    public String findPw(HttpServletResponse response, String id, String email) throws Exception {
-    	response.setContentType("text/html;charset=utf-8");
-    	PrintWriter out = response.getWriter();
-    	logger.info("service 접근");
-    	String pw = dao.findPw(id, email);
-    	logger.info("pw : "+pw);
-    	 if (pw == null) {
-             out.println("<script>");
-             out.println("alert('아이디 또는 이메일을 수정해주세요.');");
-             out.println("history.go(-1);");
-             out.println("</script>");
-             out.close();
-         } else {
-         	logger.info("pw : "+pw);
-             
-         }
-         return pw;
-    }
-	
-	
 }

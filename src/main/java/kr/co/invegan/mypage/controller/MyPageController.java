@@ -35,19 +35,19 @@ public class MyPageController {
 
 	@RequestMapping(value = "/myPage/info.go")
 	public String infoGo(Model model, HttpSession session) {
+
+		int user_no = ((MemberDTO) session.getAttribute("loginInfo")).getUser_no();
 		
-		String page = "redirect:/";
-		
-		MemberDTO loginInfo = (MemberDTO) session.getAttribute("loginInfo");
-		if(loginInfo != null) {
-			int user_no = loginInfo.getUser_no();
+		if (user_no != 0) {
 			MyPageDTO dto = service.userInfo(user_no);
 			model.addAttribute("dto", dto);
 			logger.info("dto:" + dto);
 			logger.info(dto.getProfile_image());
-			page = "myPage/mypage";
+			
+			return "myPage/mypage";
+		} else {
+			return "redirect:/login";
 		}
-		return page;
 	}
 
 	@RequestMapping(value = "/myPage/feedListCall")
