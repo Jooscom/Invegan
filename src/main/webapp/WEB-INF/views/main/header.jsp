@@ -171,7 +171,7 @@ body::-webkit-scrollbar {
 		
 			<!-- 로그인 했을 때 -->
  			<c:if test="${not empty loginInfo}">
-				<p><img id="profileImg" src="/photo/${loginInfo.getProfile_img()}" /></p>
+				<p><img id="profileImg" src="/photo/invegan/${loginInfo.getProfile_img()}" /></p>
 				<p id="loginNickname">${loginInfo.getNickname()}</p>
 				<p id="loginId">( ${loginInfo.getId()} )</p>
 				<div class="infoMB">
