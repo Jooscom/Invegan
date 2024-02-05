@@ -1,6 +1,8 @@
 
 ![invegan_logo_master](https://github.com/Jooscom/Invegan/assets/136825137/df1ba5a0-e882-460c-92cb-356478c50cc0)
 
+##[사이트 이동](http:150.230.251.2/invegan)
+
 # INVEGAN
 ### 채식주의자들을 위한 채식관련 정보 제공 웹사이트
 ### 비건 인구가 증가함에 따라 비건 단계와 사용자의 성향과 기호에 맞는 채식주의 정보를 제공하는 서비스
