@@ -1,7 +1,7 @@
 
 ![invegan_logo_master](https://github.com/Jooscom/Invegan/assets/136825137/df1ba5a0-e882-460c-92cb-356478c50cc0)
 
-##[사이트 이동](http:150.230.251.2/invegan)
+## [사이트 이동](http:150.230.251.2/invegan)
 
 # INVEGAN
 ### 채식주의자들을 위한 채식관련 정보 제공 웹사이트
